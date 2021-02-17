@@ -114,10 +114,7 @@ namespace mCore
             Process[] processes = Process.GetProcesses();
             foreach (Process p in processes)
             {
-                if (!String.IsNullOrEmpty(p.MainWindowTitle))
-                {
-                    Apps = Apps + p.ProcessName + ".exe?%%?";
-                }
+               Apps = Apps + p.ProcessName + ".exe?%%?";
             }
 
 

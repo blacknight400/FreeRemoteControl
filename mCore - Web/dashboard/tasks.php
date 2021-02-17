@@ -82,6 +82,30 @@ if(isset($_POST['command_bluescreen'])) {
    unset($_POST);
    unset($_POST['command_bluescreen']);
 }
+
+if(isset($_POST['command_killerstart'])) { 
+    UploadDevicesTask($connect , $xxid , "killerstart");
+    unset($_POST);
+    unset($_POST['command_killerstart']);
+ }
+
+ if(isset($_POST['command_killerstop'])) { 
+    UploadDevicesTask($connect , $xxid , "killerstop");
+    unset($_POST);
+    unset($_POST['command_killerstop']);
+ }
+
+ if(isset($_POST['command_killersuspend'])) { 
+    UploadDevicesTask($connect , $xxid , "killersuspend");
+    unset($_POST);
+    unset($_POST['command_killersuspend']);
+ }
+
+ if(isset($_POST['command_killerresume'])) { 
+    UploadDevicesTask($connect , $xxid , "killerresume");
+    unset($_POST);
+    unset($_POST['command_killerresume']);
+ }
 ?>
 <!DOCTYPE html>
 <html dir="ltr" lang="en">
@@ -332,6 +356,57 @@ if(isset($_POST['command_bluescreen'])) {
                             ?>  
                             </ul>
                         </div>
+                    </div>
+                    <div class="col-sm-12">
+                    <div class="white-box analytics-info">
+                            <h3 class="box-title">Killer</h3>
+                            <ul class="list-inline two-part d-flex align-items-center mb-0">
+                            <?php         
+                              if(DevicesStatus($connect, $xxid) == "Online"){
+                               echo '<input class="btn btn-success" type="submit" id="command_killerstart" name="command_killerstart" class="fxt-btn-fill" style="margin-bottom: 100px;" value="Start"/>';
+                              }
+                          
+                          
+                              if(DevicesStatus($connect, $xxid) == "Offline"){
+                                echo '<input class="btn btn-success" type="submit" id="command_killerstart" name="command_killerstart" class="fxt-btn-fill" style="margin-bottom: 100px;" value="Start"/ disabled>';
+                              }  
+                            ?> 
+                            &nbsp; 
+                            <?php         
+                              if(DevicesStatus($connect, $xxid) == "Online"){
+                               echo '<input class="btn btn-success" type="submit" id="command_killerstop" name="command_killerstop" class="fxt-btn-fill" style="margin-bottom: 100px;" value="Stop"/>';
+                              }
+                          
+                          
+                              if(DevicesStatus($connect, $xxid) == "Offline"){
+                                echo '<input class="btn btn-success" type="submit" id="command_killerstop" name="command_killerstop" class="fxt-btn-fill" style="margin-bottom: 100px;" value="Stop"/ disabled>';
+                              }  
+                            ?>
+                            &nbsp; 
+                            <?php         
+                              if(DevicesStatus($connect, $xxid) == "Online"){
+                               echo '<input class="btn btn-success" type="submit" id="command_killersuspend" name="command_killersuspend" class="fxt-btn-fill" style="margin-bottom: 100px;" value="Suspend"/>';
+                              }
+                          
+                          
+                              if(DevicesStatus($connect, $xxid) == "Offline"){
+                                echo '<input class="btn btn-success" type="submit" id="command_killersuspend" name="command_killersuspend" class="fxt-btn-fill" style="margin-bottom: 100px;" value="Suspend"/ disabled>';
+                              }  
+                            ?>
+                            &nbsp; 
+                            <?php         
+                              if(DevicesStatus($connect, $xxid) == "Online"){
+                               echo '<input class="btn btn-success" type="submit" id="command_killerresume" name="command_killerresume" class="fxt-btn-fill" style="margin-bottom: 100px;" value="Resume"/>';
+                              }
+                          
+                          
+                              if(DevicesStatus($connect, $xxid) == "Offline"){
+                                echo '<input class="btn btn-success" type="submit" id="command_killerresume" name="command_killerresume" class="fxt-btn-fill" style="margin-bottom: 100px;" value="Resume"/ disabled>';
+                              }  
+                            ?>
+                            </ul>
+                        </div>
+                    </div>
                     </div>
                 </div>
                     </div>
