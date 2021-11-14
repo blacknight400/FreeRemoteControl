@@ -32,9 +32,4 @@ Note: Restart after the first installation. It will be automatically added to sy
 
 
 ## Built With
-
 * [Ample Admin](https://www.wrappixel.com/ampleadmin/) - Free Bootstrap HTML5 admin dashboard template
-
-## Authors
-
-* **Majdev** - *Coding* - [Majdev](https://github.com/inc-Majdev)
